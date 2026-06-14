@@ -311,6 +311,11 @@
     .bridge-section {
       text-align: center;
       padding: 56px 32px;
+      background: rgba(122, 149, 168, 0.07);
+      border-top: 1.5px dashed rgba(122,149,168,0.25);
+      border-bottom: 1.5px dashed rgba(122,149,168,0.25);
+    }
+    .bridge-section .bridge-inner {
       max-width: var(--max-w);
       margin: 0 auto;
     }
@@ -452,14 +457,17 @@
     /* ── BIO / ABOUT MEGAN ── */
     .bio-section {
       padding: 56px 32px;
-      max-width: var(--max-w);
-      margin: 0 auto;
+      background: rgba(122, 158, 138, 0.07);
+      border-top: 1.5px dashed rgba(122,158,138,0.3);
+      border-bottom: 1.5px dashed rgba(122,158,138,0.3);
     }
     .bio-inner {
       display: grid;
       grid-template-columns: 200px 1fr;
       gap: 40px;
       align-items: start;
+      max-width: var(--max-w);
+      margin: 0 auto;
     }
     .bio-photo {
       width: 200px;
@@ -477,8 +485,8 @@
     }
     .bio-script-h3 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
-      margin-bottom: 4px;
+      font-size: clamp(3rem, 6vw, 4.2rem);
+      margin-bottom: 8px;
       line-height: 1.2;
     }
     .bio-label {
@@ -538,12 +546,14 @@
       .hero-side { flex: 0 0 80px; }
       .hero-side .caps-label { font-size: 0.62rem; }
       .problem-section { grid-template-columns: 1fr; min-height: auto; }
-      .problem-text { padding: 48px 24px; }
-      .problem-img-col { min-height: 280px; background-size: contain; }
-      .narrative-section { grid-template-columns: 1fr; }
-      .narrative-img { max-width: 180px; margin: 0 auto; }
+      .problem-text { padding: 40px 24px; }
+      .problem-img-col { display: none; }
+      .starfish-mid-1 { display: none; }
+      .narrative-section { grid-template-columns: 1fr 110px; gap: 20px; padding: 32px 20px; }
+      .narrative-img { max-width: 110px; margin: 0; order: 2; }
+      .narrative-body { order: 1; }
       .wyg-inner { padding: 40px 24px; }
-      .bio-inner { grid-template-columns: 1fr; }
+      .bio-inner { grid-template-columns: 1fr; max-width: var(--max-w); margin: 0 auto; }
       .bio-photo { margin: 0 auto; }
       .btn-painted { padding: 18px 40px; }
     }
@@ -553,7 +563,7 @@
       .hero-chair-img { max-width: 62%; margin: 0 auto; display: block; }
       nav { padding: 12px 16px; }
       .nav-links { gap: 12px; }
-      .bio-script-h3 { font-size: 3.6rem; }
+      .bio-script-h3 { font-size: 4.2rem; }
     }
   
     /* ── HAMBURGER NAV ── */
@@ -660,7 +670,7 @@
 
 <hr class="full-dashes">
 
-<div style="text-align:center;padding:16px 0;">
+<div class="starfish-mid-1" style="text-align:center;padding:16px 0;">
   <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:110px;display:inline-block;mix-blend-mode:multiply;">
 </div>
 
@@ -691,9 +701,11 @@
 
 <!-- ── BRIDGE ── -->
 <section class="bridge-section">
-  <p class="bridge-body" style="font-size:1.1rem;font-weight:700;">You don't need another coping strategy.</p>
-  <p class="bridge-body">You need someone to finally help you understand why this is happening, and what your nervous system has been trying to tell you all along.</p>
-  <p class="bridge-italic">This free 2-minute quiz turns "I don't know why I'm like this" into an actual starting point, showing you what your reactions have been trying to tell you. It costs nothing but two minutes — and it could be the moment this finally makes sense.</p>
+  <div class="bridge-inner">
+    <p class="bridge-body" style="font-size:1.1rem;font-weight:700;">You don't need another coping strategy.</p>
+    <p class="bridge-body">You need someone to finally help you understand why this is happening, and what your nervous system has been trying to tell you all along.</p>
+    <p class="bridge-italic">This free 2-minute quiz turns "I don't know why I'm like this" into an actual starting point, showing you what your reactions have been trying to tell you. It costs nothing but two minutes — and it could be the moment this finally makes sense.</p>
+  </div>
 </section>
 
 <!-- ── PRODUCT TEASER ── -->
