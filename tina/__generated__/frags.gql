@@ -1,0 +1,19 @@
+fragment BlogParts on Blog {
+  __typename
+  title
+  date
+  dateDisplay
+  description
+  excerpt
+  heroImage
+  body
+  faq {
+    __typename
+    question
+    answer
+  }
+  prevLabel
+  prevHref
+  nextLabel
+  nextHref
+}
