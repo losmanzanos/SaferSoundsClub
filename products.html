@@ -30,7 +30,7 @@
 
     html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 860px; }
+    :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 860px; }
     html { scroll-behavior: smooth; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
@@ -38,7 +38,7 @@
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 1; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; flex-shrink: 0; }
@@ -134,8 +134,8 @@
     .pricing-wave { max-width: 420px; margin: 0 auto 48px; display: block; mix-blend-mode: multiply; opacity: 0.88; }
 
     /* ── GUARANTEE ── */
-    .guarantee-section { padding: 48px 32px; text-align: center; background: rgba(122,149,168,0.05); border-top: 1.5px dashed rgba(122,149,168,0.2); }
-    .guarantee-inner { max-width: 560px; margin: 0 auto; }
+    .guarantee-section { padding: 48px 32px; text-align: center; background: rgba(122,149,168,0.05); border-top: 1.5px dashed rgba(122,149,168,0.2); width: 100%; }
+    .guarantee-inner { max-width: 700px; margin: 0 auto; text-align: center; }
     .guarantee-inner p { font-size: 0.97rem; line-height: 1.85; margin-bottom: 10px; }
 
     /* ── FOOTER ── */
@@ -204,10 +204,9 @@
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="products.html" class="active">Workshop</a></li>
-    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -219,8 +218,8 @@
 <section class="page-hero">
   <p class="eyebrow">A guided experience for misophonia</p>
   <h1>The Safer Sounds Workshop</h1>
-  <p class="subhead">Finally understand what's underneath your reaction — in your body, not just your mind. A 60-minute guided experience you can return to again and again.</p>
-  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+  <p class="subhead">Finally understand what's underneath your reaction, in your body, not just your mind. A 60-minute guided experience you can return to again and again.</p>
+  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop?step=checkout" target="_blank" class="btn-painted">
     <span class="paint-bg-img" aria-hidden="true">
       <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
     </span>
@@ -230,16 +229,6 @@
 
 <img src="images/dots-row.png" style="display:block;max-width:560px;width:80%;margin:0 auto;mix-blend-mode:multiply;opacity:0.7;" aria-hidden="true" alt="" loading="lazy" decoding="async">
 
-<!-- ── CALLOUT ── -->
-<section class="callout">
-  <div class="callout-inner">
-    <p><strong>The problem isn't the sound.</strong></p>
-    <p>The sound is just the trigger. Underneath every misophonia reaction is a deeper feeling your nervous system has been reaching for — something it learned to protect you from a long time ago.</p>
-    <p><em>When you understand what that feeling is, the whole thing stops being a mystery you're managing and starts being something you can actually work with.</em></p>
-  </div>
-</section>
-
-<hr class="full-dashes">
 
 <!-- ── MODULES / WHAT'S INSIDE ── -->
 <section class="modules-section">
@@ -249,40 +238,24 @@
   <div class="module-card">
     <p class="module-num">Part 01</p>
     <p class="module-title">A 60-Minute Guided Experience</p>
-    <p class="module-body">Not a lecture. An experience. You'll slow down a real trigger moment and finally understand your reaction from the inside out — what your nervous system is actually doing, and why. Work through it at your own pace, returning to it with as many triggers as you need.</p>
+    <p class="module-body">Not a lecture. An experience. You'll slow down a real trigger moment and finally understand your reaction from the inside out, what your nervous system is actually doing, and why. Work through it at your own pace, returning to it with as many triggers as you need.</p>
   </div>
 
   <div class="module-card">
     <p class="module-num">Part 02</p>
     <p class="module-title">A Somatic Regulation Practice</p>
-    <p class="module-body">A body-based practice you can return to anytime — before a triggering environment, after a reaction hits, or on the days that feel like too much. This isn't about calming down. It's about coming home to your own nervous system.</p>
+    <p class="module-body">A body-based practice you can return to anytime, before a triggering environment, after a reaction hits, or on the days that feel like too much. This isn't about calming down. It's about coming home to your own nervous system.</p>
   </div>
 
   <div class="module-card">
     <p class="module-num">Part 03</p>
     <p class="module-title">The Misophonia Relief Map Worksheet</p>
-    <p class="module-body">A personal map of what's underneath your reaction — specific to your pattern and your history. Bring it into therapy or work through it on your own. Yours to keep.</p>
+    <p class="module-body">A personal map of what's underneath your reaction, specific to your pattern and your history. Bring it into therapy or work through it on your own. Yours to keep.</p>
   </div>
 </section>
 
 <hr class="full-dashes">
 
-<!-- ── TESTIMONIALS ── -->
-<section class="testimonials-section">
-  <div class="testimonials-inner">
-    <p class="testimonials-eyebrow">What others are saying</p>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <p class="testimonial-quote">"I've spent years being told I was too sensitive. This workshop was the first time I actually understood why my body responds the way it does. I didn't expect to feel so seen."</p>
-        <p class="testimonial-attr">— Workshop participant</p>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-quote">"I've tried so many things. This was different. I finally have language for what's happening inside me — and something I can actually do with it."</p>
-        <p class="testimonial-attr">— Workshop participant</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── PRICING ── -->
 <section class="pricing-section">
@@ -298,11 +271,11 @@
       <li>60-minute guided somatic experience</li>
       <li>Somatic regulation practice (audio)</li>
       <li>The Misophonia Relief Map worksheet</li>
-      <li>Unlimited access — work at your own pace</li>
+      <li>Unlimited access, work at your own pace</li>
     </ul>
   </div>
 
-  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop?step=checkout" target="_blank" class="btn-painted">
     <span class="paint-bg-img" aria-hidden="true">
       <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
     </span>
@@ -312,9 +285,12 @@
 
 <!-- ── GUARANTEE / REASSURANCE ── -->
 <section class="guarantee-section">
+  <div style="text-align:center;margin-bottom:24px;">
+    <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:clamp(68px,8vw,100px);mix-blend-mode:multiply;opacity:0.65;" loading="lazy" decoding="async">
+  </div>
   <div class="guarantee-inner">
     <p class="caps-label" style="margin-bottom:16px;">A note before you go</p>
-    <p>This workshop isn't a cure. Misophonia is complex, and healing it takes time. What this gives you is a real starting point — a way to finally understand your own pattern and begin working with it rather than against it.</p>
+    <p>This workshop isn't a cure. Misophonia is complex, and healing it takes time. What this gives you is a real starting point, a way to finally understand your own pattern and begin working with it rather than against it.</p>
     <p>If you're already working with a therapist, this is something you can bring into that work. If you're not, this is a meaningful place to begin.</p>
     <p style="margin-top:16px;font-style:italic;opacity:0.7;font-size:0.95rem;">The Safer Sounds Club is educational and is not a substitute for therapy.</p>
   </div>
@@ -323,10 +299,9 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-links">
-    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Workshop</a>
-    <a href="quiz.html">Free Quiz</a>
+    <a href="quiz.html">Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>

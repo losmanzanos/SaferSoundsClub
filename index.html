@@ -29,7 +29,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #f5f0e8;
+      --cream: #faf7f2;
       --ink: #1a1a1a;
       --sage: #7a9e8a;
       --blue-slate: #7a95a8;
@@ -81,7 +81,7 @@
       text-transform: uppercase;
       text-decoration: none;
       color: var(--ink);
-      opacity: 0.75;
+      opacity: 1;
       transition: opacity 0.2s;
     }
     .nav-links a:hover { opacity: 1; }
@@ -246,14 +246,14 @@
     .problem-script-h2 {
       font-family: 'MeowScript', cursive;
       font-weight: 400;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.1;
-      margin-bottom: 24px;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: 1.15;
+      margin-bottom: 16px;
     }
     .problem-body {
-      font-size: 1.33rem;
-      line-height: 1.65;
-      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
     }
     .problem-img-col {
       display: block;
@@ -369,9 +369,9 @@
       margin-bottom: 16px;
     }
     .bridge-body {
-      font-size: 1.3rem;
-      line-height: 1.65;
-      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 14px;
     }
     .bridge-italic {
       font-style: italic;
@@ -588,7 +588,7 @@
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
       .nav-links { gap: 16px; }
-      .nav-links li:first-child { display: none; } /* hide "Home" on mobile */
+      /* Home removed from nav — no items need hiding */
       .hero { padding: 32px 0 0; }
       .tagline-section { padding: 32px 20px 24px; }
       .bridge-section { padding: 40px 20px; }
@@ -671,6 +671,54 @@
       footer { padding: 24px 16px 40px; }
       .footer-links { gap: 12px; font-size: 0.9rem; }
     }
+
+
+    /* ── NARRATIVE CARDS (if this is your life) ── */
+    .narrative-card {
+      position: relative;
+      padding: 28px 32px;
+      border: 1.5px solid rgba(122,158,138,0.32);
+      border-radius: 2px;
+      background: rgba(122,158,138,0.04);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .narrative-card::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px dashed rgba(26,26,26,0.08);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    @media (max-width: 640px) {
+      .narrative-card { grid-column: 1/-1 !important; }
+      .narrative-card:last-child { grid-column: 1/-1 !important; }
+    }
+
+    /* legacy narrative-box styles kept for safety */
+    .narrative-box {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px;
+      border: 2px solid rgba(122,158,138,0.35);
+      border-radius: 2px;
+      background: rgba(122,158,138,0.04);
+    }
+    .narrative-box::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1.5px dashed rgba(26,26,26,0.12);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .narrative-box { padding: 28px 20px; }
+    }
+    /* Smaller home page buttons */
+    .btn-home { padding: 14px 36px !important; font-size: 0.85rem !important; }
   </style>
 <script type="application/ld+json">
 {
@@ -700,10 +748,9 @@
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="products.html">Workshop</a></li>
-    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -739,13 +786,13 @@
   <h1 class="hero-title-mobile" aria-hidden="true">the Safer Sounds Club</h1>
   <div class="hero-chair-row">
     <div class="hero-side" style="text-align:center;">
-      <p class="caps-label" style="opacity:0.5;letter-spacing:-0.025em;line-height:2;">PEACE IN<br>YOUR BODY</p>
+      <p class="caps-label" style="letter-spacing:-0.025em;line-height:2;">PEACE IN<br>YOUR BODY</p>
     </div>
     <div class="hero-chair-img">
       <img src="images/Chair.png" alt="Beach chair" style="width:100%;display:block;mix-blend-mode:multiply;" fetchpriority="high" decoding="async">
     </div>
     <div class="hero-side">
-      <p class="caps-label" style="opacity:0.5;letter-spacing:-0.025em;line-height:2;">AT HOME<br>IN YOUR LIFE</p>
+      <p class="caps-label" style="letter-spacing:-0.025em;line-height:2;">AT HOME<br>IN YOUR LIFE</p>
     </div>
   </div>
 </section>
@@ -763,11 +810,11 @@
     <h2 class="problem-script-h2">You deserve a life that isn't built around managing sounds.</h2>
     <p class="problem-body">The headphones in every bag. The meals eaten alone. The exits you've planned before you even sat down. The trips you didn't take. The relationships that are fine, totally fine, as long as nobody breaks out a bag of chips near you.</p>
     <p class="problem-body">You have built an entire architecture of avoidance. From the outside it looks like you just have a lot of preferences. From the inside it is a full time job with no days off.</p>
-    <p class="problem-body">You don't have to keep living this way. The free quiz takes two minutes — and it's a real starting point for understanding what's actually driving your reactions.</p>
+    <p class="problem-body">You don't have to keep living this way. The free quiz takes two minutes, and it's a real starting point for understanding what's actually driving your reactions.</p>
     <div style="margin-top:32px;">
-      <a href="quiz.html" class="btn-painted btn-sage">
+      <a href="quiz.html" class="btn-painted btn-sage btn-home">
         <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
-        <span class="btn-label">Take the Free Quiz</span>
+        <span class="btn-label">Take the Quiz</span>
       </a>
     </div>
   </div>
@@ -777,54 +824,53 @@
 <hr class="full-dashes">
 
 <!-- ── NARRATIVE ── -->
-<section class="narrative-section">
-  <div class="narrative-img">
-    <img src="images/Umbrella.png" alt="Beach umbrella line art" style="mix-blend-mode:multiply;width:100%;" loading="lazy" decoding="async">
+<div style="padding:24px 32px;max-width:900px;margin:0 auto;">
+  <p style="font-style:italic;font-size:1.05rem;font-weight:700;margin-bottom:28px;text-align:center;">If this is your life:</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div class="narrative-card">You ate lunch at your desk alone again. Not because you're busy. Because the office kitchen is a minefield of chewing sounds and you learned a long time ago that it's just easier this way.</div>
+    <div class="narrative-card">You can hear the bass from your neighbor's car from three houses away and your whole body has already tensed before you've even looked up from what you're doing.</div>
+    <div class="narrative-card">You've mentioned it to a therapist before. They nodded and moved on. You got the sense they didn't really know what to do with it. So you stopped bringing it up and started managing it alone, the way you manage most things.</div>
+    <div class="narrative-card">Your partner tries. He really tries. He chews quietly, he waits until you're out of the kitchen, he checks in with you before he opens a bag of anything. But watching him shrink himself around your reaction is somehow worse than the reaction itself.</div>
+    <div class="narrative-card" style="grid-column:1/-1;">Your siblings used to make the sound they knew would send you over the edge on purpose and laugh. And when you reacted, somehow you were the one who was in the wrong.</div>
   </div>
-  <p class="narrative-intro">If this is your life:</p>
-  <div class="narrative-body">
-    <p>You ate lunch at your desk alone again. Not because you're busy. Because the office kitchen is a minefield of chewing sounds and you learned a long time ago that it's just easier this way.</p>
-    <hr class="narrative-divider">
-    <p>You can hear the bass from your neighbor's car from three houses away and your whole body has already tensed before you've even looked up from what you're doing.</p>
-    <hr class="narrative-divider">
-    <p>You've mentioned it to a therapist before. They nodded and moved on. You got the sense they didn't really know what to do with it. So you stopped bringing it up and started managing it alone, the way you manage most things.</p>
-    <hr class="narrative-divider">
-    <p>Your partner tries. He really tries. He chews quietly, he waits until you're out of the kitchen, he checks in with you before he opens a bag of anything. But watching him shrink himself around your reaction is somehow worse than the reaction itself. You don't want this for him. You don't want this for either of you.</p>
-    <hr class="narrative-divider">
-    <p>Your siblings used to make the sound they knew would send you over the edge on purpose and laugh. And when you reacted, somehow you were the one who was in the wrong.</p>
+  <div style="text-align:center;margin-top:32px;">
+    <img src="images/Umbrella.png" alt="" aria-hidden="true" style="width:clamp(120px,18vw,210px);mix-blend-mode:multiply;opacity:0.82;" loading="lazy" decoding="async">
   </div>
-</section>
-
-<hr class="full-dashes">
+</div>
 
 <!-- ── BRIDGE + WORKSHOP ── -->
 <section class="bridge-section">
   <div class="bridge-inner">
     <p class="bridge-body" style="font-size:1.3rem;font-weight:700;">You don't need another coping strategy.</p>
-    <p class="bridge-body">You need someone to finally help you understand why this is happening — and what your nervous system has been trying to tell you all along.</p>
+    <p class="bridge-body">You need someone to finally help you understand why this is happening, and what your nervous system has been trying to tell you all along.</p>
     <hr class="narrative-divider" style="margin:32px auto;max-width:200px;">
     <h2 class="product-script-h2" style="margin-bottom:16px;">The Safer Sounds Workshop</h2>
-    <p class="bridge-body">A 60-minute guided experience to finally understand what's underneath your misophonia — in your body, not just your mind. Includes a somatic regulation practice and a personal worksheet to map your own pattern.</p>
-    <p class="bridge-body" style="margin-top:16px;"><em>You've spent years managing this. Sixty minutes to finally understand it — and start finding your way back to your life.</em></p>
+    <p class="bridge-body">A 60-minute guided experience to finally understand what's underneath your misophonia, in your body, not just your mind. Includes a somatic regulation practice and a personal worksheet to map your own pattern.</p>
+    <p class="bridge-body" style="margin-top:16px;"><em>You've spent years managing this. Sixty minutes to finally understand it, and start finding your way back to your life.</em></p>
     <div style="margin-top:32px;">
-      <a href="products.html" class="btn-painted">
+      <a href="products.html" class="btn-painted btn-home">
         <span class="paint-bg-img" aria-hidden="true">
           <img src="images/brushstroke-blue.png" alt="">
         </span>
-        <span class="btn-label">See the Workshop</span>
+        <span class="btn-label">Learn More</span>
       </a>
     </div>
   </div>
 </section>
 
 
+<!-- ── WAVE decorative footer ── -->
+<div style="width:100%;max-width:340px;margin:56px auto 0;padding:0 24px;">
+  <img src="images/Two waves.png" alt="" aria-hidden="true" style="width:100%;display:block;mix-blend-mode:multiply;opacity:0.68;" loading="lazy" decoding="async">
+</div>
+<div style="height:40px;"></div>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-links">
-    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Workshop</a>
-    <a href="quiz.html">Free Quiz</a>
+    <a href="quiz.html">Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
@@ -840,15 +886,15 @@
 <div id="quiz-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(26,26,26,0.55);align-items:center;justify-content:center;padding:24px;">
   <div style="background:var(--cream);max-width:480px;width:100%;padding:48px 40px;position:relative;text-align:center;">
     <button onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.3rem;cursor:pointer;opacity:0.4;font-family:'CoreBandiFace',cursive;">✕</button>
-    <p style="font-family:'CoreBandiFace',cursive;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.5;margin-bottom:16px;">Free 2-Minute Quiz</p>
-    <h2 style="font-family:'CoreBandiFace',cursive;font-size:clamp(1.5rem,5vw,2.6rem);line-height:1.25;margin-bottom:20px;">It's about more than the sound.</h2>
-    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:8px;">Underneath the panic and rage is a deeper feeling driving the whole reaction.</p>
-    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:28px;">Two minutes to find yours — and a short guided mindfulness practice, specific to you, to keep.</p>
-    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" class="btn-painted btn-sage">
+    <h2 style="font-family:'MeowScript',cursive;font-weight:400;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin-bottom:20px;">Let's sit down to a meal together.</h2>
+    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:8px;">I'll tell you why the clinks and crunches feel like a personal attack.</p>
+    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:28px;">In just a couple of minutes, we'll uncover what your nervous system is actually reacting to.</p>
+    <a href="quiz.html" class="btn-painted btn-sage">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
-      <span class="btn-label">See What's Underneath</span>
+      <span class="btn-label">Pull Up a Chair</span>
     </a>
-    <p style="font-family:'CoreBandiFace',cursive;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:20px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
+    <img src="images/Chair.png" alt="" aria-hidden="true" style="width:clamp(72px,14vw,106px);mix-blend-mode:multiply;opacity:0.72;margin:18px auto 0;display:block;" loading="lazy" decoding="async">
+    <p style="font-family:'CoreBandiFace',cursive;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:10px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
   </div>
 </div>
 <script>

@@ -29,13 +29,13 @@
     }
     html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
+    :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 1; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
@@ -67,14 +67,14 @@
 
     /* MEGAN BIO */
     .bio-section { max-width: var(--max-w); margin: 0 auto; padding: 64px 32px; }
-    .bio-inner { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
+    .bio-inner { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; }
     .bio-photo {
-      width: 240px; height: 240px; border-radius: 50%; background: #d4c9b5;
+      width: 300px; height: 360px; border-radius: 4px; background: #d4c9b5;
       display: flex; align-items: center; justify-content: center;
       font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em;
       color: rgba(26,26,26,0.45); object-fit: cover;
     }
-    .bio-photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+    .bio-photo img { width: 100%; height: 100%; border-radius: 4px; object-fit: cover; object-position: top center; }
     .bio-name { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; margin-bottom: 8px; }
     .bio-creds { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.75; margin-bottom: 24px; }
     .bio-body p { margin-bottom: 1rem; font-size: 1rem; line-height: 1.85; }
@@ -94,9 +94,9 @@
     .audience-section h2 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 8px; }
     .audience-label { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 28px; display: block; }
     .audience-section p { font-size: 1rem; line-height: 1.85; margin-bottom: 1rem; max-width: 740px; }
-    .audience-section ul { padding-left: 24px; margin: 12px 0 24px; }
+    .audience-section ul { padding-left: 24px; margin: 12px 0 24px; max-width: 740px; }
     .audience-section li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 10px; }
-    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; }
+    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; max-width: 740px; }
     .audience-col h3 { font-family: 'CoreBandiFace', cursive; font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
     .audience-col p { font-size: 0.95rem; line-height: 1.8; }
 
@@ -201,10 +201,9 @@
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
     <li><a href="about.html" class="active">About</a></li>
     <li><a href="products.html">Workshop</a></li>
-    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -215,7 +214,7 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
   <h1>About</h1>
-  <p>What misophonia actually is — and why coping strategies aren't enough</p>
+  <p>What misophonia actually is, and why coping strategies aren't enough</p>
 </section>
 
 <hr class="full-dashes">
@@ -225,7 +224,7 @@
   <div class="bio-inner">
     <div>
       <div class="bio-photo">
-        <img src="images/megan-carlson.jpg" alt="Megan Carlson, licensed therapist" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:top center;">
+        <img src="images/megan-carlson.jpg" alt="Megan Carlson, licensed therapist" style="width:100%;height:100%;border-radius:4px;object-fit:cover;object-position:top center;">
       </div>
     </div>
     <div>
@@ -233,10 +232,10 @@
       <p class="bio-creds">Licensed Therapist &bull; EMDR &bull; Sensorimotor Psychotherapy &bull; Colorado</p>
       <div class="bio-body">
         <p>I've had misophonia for most of my adult life. For years, I assumed I was just difficult. Too sensitive. The kind of person who couldn't sit at a dinner table without planning their exit.</p>
-        <p>I tried the earplugs. The white noise machines. The therapists who nodded and moved on. I tried telling myself it wasn't a big deal — right up until I was leaving family dinners early, avoiding restaurants, and mapping out who in a given room might be eating.</p>
-        <p>What finally changed things wasn't a coping strategy. It was somatic therapy. When I started working with the stored emotional activation underneath my reaction — not just trying to manage it from the outside — things shifted in ways I didn't think were possible for me.</p>
-        <p>I'm a licensed therapist in Colorado, trained in EMDR and Sensorimotor Psychotherapy. Both are body-based modalities that work below the level of conscious thought — because thinking harder about my misophonia never scratched the surface.</p>
-        <p>I built the Safer Sounds Club because I spent years wishing something like it existed. It's not a coping strategy. It's a way to finally understand what's underneath — and start finding your way back to your life.</p>
+        <p>I tried the earplugs. The white noise machines. The therapists who nodded and moved on. I tried telling myself it wasn't a big deal, right up until I was leaving family dinners early, avoiding restaurants, and mapping out who in a given room might be eating.</p>
+        <p>What finally changed things wasn't a coping strategy. It was somatic therapy. When I started working with the stored emotional activation underneath my reaction, not just trying to manage it from the outside, things shifted in ways I didn't think were possible for me.</p>
+        <p>I'm a licensed therapist in Colorado, trained in EMDR and Sensorimotor Psychotherapy. Both are body-based modalities that work below the level of conscious thought, because thinking harder about my misophonia never scratched the surface.</p>
+        <p>I built the Safer Sounds Club because I spent years wishing something like it existed. It's not a coping strategy. It's a way to finally understand what's underneath, and start finding your way back to your life.</p>
       </div>
     </div>
   </div>
@@ -248,22 +247,25 @@
 <section class="what-section">
   <div class="what-inner">
     <h2>What is misophonia?</h2>
-    <p>Misophonia is a neurological condition in which specific sounds trigger an intense, disproportionate emotional and physiological response. It is not a hearing disorder, and it is not simply being "sensitive." The reaction — which often includes rage, panic, disgust, or an overwhelming need to escape — is involuntary and happens before conscious thought can intervene.</p>
-    <p>The word misophonia means "hatred of sound," but that's not quite right. It's not all sounds. It's specific sounds — often sounds made by other people breathing, chewing, swallowing, or sniffling. Sometimes it's repetitive environmental sounds: tapping, clicking, the bass from a neighbor's music. The specificity varies, but the pattern is consistent: a trigger sound produces an immediate, full-body alarm response.</p>
+    <p>Misophonia is a neurological condition in which specific sounds trigger an intense, disproportionate emotional and physiological response. It is not a hearing disorder, and it is not simply being "sensitive." The reaction, which often includes rage, panic, disgust, or an overwhelming need to escape, is involuntary and happens before conscious thought can intervene.</p>
+    <p>The word misophonia means "hatred of sound," but that's not quite right. It's not all sounds. It's specific sounds, often sounds made by other people breathing, chewing, swallowing, or sniffling. Sometimes it's repetitive environmental sounds: tapping, clicking, the bass from a neighbor's music. The specificity varies, but the pattern is consistent: a trigger sound produces an immediate, full-body alarm response.</p>
     <p><strong>What researchers and clinicians now understand:</strong></p>
     <ul class="misophonia-facts">
       <li><strong>It's neurologically based.</strong> Neuroimaging studies show atypical patterns of brain activity in people with misophonia when exposed to trigger sounds, particularly in areas linked to emotion regulation and threat detection.</li>
       <li><strong>It often starts in childhood or adolescence,</strong> typically between ages 9 and 13, and frequently involves sounds made by close family members first.</li>
-      <li><strong>It tends to worsen over time</strong> without intervention — not because you're getting more sensitive, but because avoidance reinforces the alarm response.</li>
+      <li><strong>It tends to worsen over time</strong> without intervention, not because you're getting more sensitive, but because avoidance reinforces the alarm response.</li>
       <li><strong>It commonly co-occurs with anxiety, OCD, and PTSD,</strong> though it is its own distinct condition and can exist independently of all of them.</li>
       <li><strong>Standard coping strategies don't address the root.</strong> Noise-canceling headphones, earplugs, and avoidance can reduce exposure but do not change the underlying nervous system response.</li>
-      <li><strong>Somatic approaches show the most promise</strong> because they address the stored emotional activation and nervous system patterns underneath the reaction — not just the reaction itself.</li>
+      <li><strong>Somatic approaches show the most promise</strong> because they address the stored emotional activation and nervous system patterns underneath the reaction, not just the reaction itself.</li>
     </ul>
-    <p>Misophonia is not your fault. It is not a personality flaw. And there is more that can help than most people — including most therapists — currently know.</p>
+    <p>Misophonia is not your fault. It is not a personality flaw. And there is more that can help than most people, including most therapists, currently know.</p>
   </div>
 </section>
 
-<hr class="full-dashes">
+<!-- ── illustrated section break ── -->
+<div style="text-align:center;padding:40px 0 16px;">
+  <img src="images/Sand Dollar.png" alt="" aria-hidden="true" style="width:clamp(58px,7vw,86px);mix-blend-mode:multiply;opacity:0.65;" loading="lazy" decoding="async">
+</div>
 
 <!-- FOR PEOPLE WITH MISOPHONIA -->
 <div style="position:relative;overflow:hidden;">
@@ -271,10 +273,10 @@
 <section class="audience-section">
   <span class="audience-label">For the person with misophonia</span>
   <h2>You are not overreacting.</h2>
-  <p>If you've spent years being told you're too sensitive, dramatic, or difficult — or if you've told yourself that — I want you to know something: your nervous system is responding to a real signal. The intensity of your reaction is not a character flaw. It is a window into something that has been stored in your body, often for a very long time.</p>
-  <p>You've probably tried the strategies. Headphones. White noise. Seating yourself strategically at every table. Leaving before the food arrives. Managing, managing, always managing — and never actually getting any better.</p>
+  <p>If you've spent years being told you're too sensitive, dramatic, or difficult, or if you've told yourself that, I want you to know something: your nervous system is responding to a real signal. The intensity of your reaction is not a character flaw. It is a window into something that has been stored in your body, often for a very long time.</p>
+  <p>You've probably tried the strategies. Headphones. White noise. Seating yourself strategically at every table. Leaving before the food arrives. Managing, managing, always managing, and never actually getting any better.</p>
   <p>The reason coping strategies have a ceiling is that they work at the level of the symptom. They manage what's happening at the surface without touching what's driving it underneath. That's not a failing on your part. That's just not what coping strategies are designed to do.</p>
-  <p><strong>What I believe — and what the research supports:</strong> misophonia is not a life sentence. The nervous system can learn. Stored emotional activation can be released. The alarm response, when met with the right tools, can shift — not just be managed.</p>
+  <p><strong>What I believe, and what the research supports:</strong> misophonia is not a life sentence. The nervous system can learn. Stored emotional activation can be released. The alarm response, when met with the right tools, can shift, not just be managed.</p>
   <p>That's what the work here is about.</p>
   <div style="margin-top: 32px;">
     <a href="quiz.html" class="btn-painted btn-sage">
@@ -286,36 +288,45 @@
 </div>
 
 <!-- FOR PARENTS -->
-<div style="background: rgba(122,158,138,0.13); width:100%;">
+<div style="position:relative;overflow:hidden;background: rgba(122,158,138,0.13); width:100%;">
+  <img src="images/Umbrella.png" alt="" aria-hidden="true" class="palm-deco" style="position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:280px;mix-blend-mode:multiply;opacity:0.82;pointer-events:none;" loading="lazy" decoding="async">
 <section class="audience-section">
-  <span class="audience-label">For parents</span>
-  <h2>Your child is not making it up.</h2>
-  <p>If your child has misophonia, you may have watched them go from distressed to explosive in seconds — over something that didn't seem to register for anyone else in the room. You may have tried accommodating them, setting limits, researching endlessly, and still not knowing what actually helps.</p>
-  <p>Here's what I want parents to understand:</p>
-  <ul>
-    <li><strong>Your child's reaction is neurological.</strong> They are not choosing to react this way. The response is happening faster than conscious thought, and it is genuinely overwhelming to them.</li>
-    <li><strong>Telling them to "calm down" or ignore it does not work</strong> — and in many cases makes things worse by adding shame to an already dysregulated nervous system.</li>
-    <li><strong>Accommodating every trigger in the environment</strong> (asking siblings to chew quietly, reorganizing mealtimes) may feel kind in the moment but tends to maintain and expand the misophonia over time by reinforcing avoidance.</li>
-    <li><strong>The most helpful thing</strong> is co-regulation: helping your child build a relationship with their nervous system, not just manage their reactions. This is a skill, and it can be taught.</li>
-  </ul>
-  <p>The parenting course in development at the Safer Sounds Club will give you concrete tools for this — conversation frameworks, regulation practices you can do together, and a way to understand your child's experience from the inside out.</p>
-  <div style="margin-top: 32px;">
-    <a href="contact.html" class="btn-painted btn-sage">
-      <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
-      <span class="btn-label">Get in Touch</span>
-    </a>
+  <div style="text-align:center;padding:0 0 40px;">
+    <img src="images/Sand Dollar.png" alt="" aria-hidden="true" style="width:clamp(58px,7vw,86px);mix-blend-mode:multiply;opacity:0.65;" loading="lazy" decoding="async">
+  </div>
+  <div style="margin-left:auto;max-width:740px;">
+    <span class="audience-label">For parents</span>
+    <h2>Your child is not making it up.</h2>
+    <p>If your child has misophonia, you may have watched them go from distressed to explosive in seconds, over something that didn't seem to register for anyone else in the room. You may have tried accommodating them, setting limits, researching endlessly, and still not knowing what actually helps.</p>
+    <p>Here's what I want parents to understand:</p>
+    <ul>
+      <li><strong>Your child's reaction is neurological.</strong> They are not choosing to react this way. The response is happening faster than conscious thought, and it is genuinely overwhelming to them.</li>
+      <li><strong>Telling them to "calm down" or ignore it does not work</strong>, and in many cases makes things worse by adding shame to an already dysregulated nervous system.</li>
+      <li><strong>Accommodating every trigger in the environment</strong> (asking siblings to chew quietly, reorganizing mealtimes) may feel kind in the moment but tends to maintain and expand the misophonia over time by reinforcing avoidance.</li>
+      <li><strong>The most helpful thing</strong> is co-regulation: helping your child build a relationship with their nervous system, not just manage their reactions. This is a skill, and it can be taught.</li>
+    </ul>
+    <p>The parenting course in development at the Safer Sounds Club will give you concrete tools for this, conversation frameworks, regulation practices you can do together, and a way to understand your child's experience from the inside out.</p>
+    <div style="margin-top: 32px;">
+      <a href="contact.html" class="btn-painted btn-sage">
+        <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+        <span class="btn-label">Get in Touch</span>
+      </a>
+    </div>
   </div>
 </section>
 </div>
 
-<hr class="full-dashes">
-
 <!-- FOR THERAPISTS -->
+<div style="position:relative;overflow:hidden;">
+  <img src="images/Starfish.png" alt="" aria-hidden="true" class="palm-deco" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:280px;mix-blend-mode:multiply;opacity:0.75;pointer-events:none;" loading="lazy" decoding="async">
 <section class="audience-section">
+  <div style="text-align:center;padding:0 0 40px;">
+    <img src="images/Sand Dollar.png" alt="" aria-hidden="true" style="width:clamp(58px,7vw,86px);mix-blend-mode:multiply;opacity:0.65;" loading="lazy" decoding="async">
+  </div>
   <span class="audience-label">For therapists</span>
-  <h2>This is workable — and there is a way to help.</h2>
-  <p>If you have a client with misophonia, you may have noticed that the standard toolkit doesn't quite fit. Cognitive reframing doesn't help when the reaction happens faster than thought. Exposure and response prevention, as borrowed from OCD treatment, often backfires because it doesn't address the emotional activation underneath the trigger. And your client may have had the experience of therapists nodding and moving on — which is part of why they're still struggling.</p>
-  <p>What works with misophonia is working with the nervous system — specifically, with the stored emotional activation and relational patterns that the trigger sound has come to represent. This is where somatic approaches, EMDR, and Sensorimotor Psychotherapy become genuinely useful.</p>
+  <h2>This is workable, and there is a way to help.</h2>
+  <p>If you have a client with misophonia, you may have noticed that the standard toolkit doesn't quite fit. Cognitive reframing doesn't help when the reaction happens faster than thought. Exposure and response prevention, as borrowed from OCD treatment, often backfires because it doesn't address the emotional activation underneath the trigger. And your client may have had the experience of therapists nodding and moving on, which is part of why they're still struggling.</p>
+  <p>What works with misophonia is working with the nervous system, specifically, with the stored emotional activation and relational patterns that the trigger sound has come to represent. This is where somatic approaches, EMDR, and Sensorimotor Psychotherapy become genuinely useful.</p>
   <div class="audience-grid">
     <div class="audience-col">
       <h3>What this often looks like clinically:</h3>
@@ -323,7 +334,7 @@
         <li style="margin-bottom: 8px;">A felt sense of threat or alarm in the body before the client can name what they're feeling</li>
         <li style="margin-bottom: 8px;">High sympathetic activation that doesn't resolve with reassurance or cognitive work</li>
         <li style="margin-bottom: 8px;">A strong sense of helplessness, loss of control, or rage that feels disproportionate but is experienced as fully real</li>
-        <li style="margin-bottom: 8px;">Relational patterns — often involving enmeshment, boundary violations, or powerlessness — that appear in the history</li>
+        <li style="margin-bottom: 8px;">Relational patterns, often involving enmeshment, boundary violations, or powerlessness, that appear in the history</li>
       </ul>
     </div>
     <div class="audience-col">
@@ -336,7 +347,7 @@
       </ul>
     </div>
   </div>
-  <p style="margin-top: 24px;">The therapist training in development here will offer a structured approach to this work — including EMDR protocol adaptations, somatic interventions, and case conceptualization frameworks for misophonia clients.</p>
+  <p style="margin-top: 24px;">The therapist training in development here will offer a structured approach to this work, including EMDR protocol adaptations, somatic interventions, and case conceptualization frameworks for misophonia clients.</p>
   <div style="margin-top: 32px;">
     <a href="contact.html" class="btn-painted btn-sage">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
@@ -344,34 +355,30 @@
     </a>
   </div>
 </section>
+</div>
 
 <hr class="full-dashes">
 
 <!-- THE APPROACH -->
 <section class="approach-section" style="padding-top: 72px;">
-  <h2>The approach</h2>
+  <h2 style="text-align:center;">The approach</h2>
   <p>Everything at the Safer Sounds Club is grounded in the same framework: misophonia is not a problem to be managed at the surface. It's an invitation to understand what's happening underneath.</p>
-  <p>The reaction to sound is real — and it is also meaningful. The intensity of what your nervous system produces when you hear a certain sound is proportional to what that sound has come to represent: a loss of control, a boundary that was never allowed to exist, a feeling you've never had language for.</p>
-  <p>Somatic therapy works because it doesn't ask you to think your way through this. It works with your body — with the felt sense, the activation, the places where the reaction lives before it reaches thought. EMDR and Sensorimotor Psychotherapy are both designed to reach the material that talking about it doesn't touch.</p>
-  <p>The resources here — the quiz, the workshop, the workbook — are built from this framework. They are not coping strategies. They are entry points into understanding: what's underneath your reaction, what your nervous system needs, and what becomes possible when you stop just managing and start actually looking.</p>
+      <p>The reaction to sound is real, and it is also meaningful. The intensity of what your nervous system produces when you hear a certain sound is proportional to what that sound has come to represent: a loss of control, a boundary that was never allowed to exist, a feeling you've never had language for.</p>
+      <p>Somatic therapy works because it doesn't ask you to think your way through this. It works with your body, with the felt sense, the activation, the places where the reaction lives before it reaches thought. EMDR and Sensorimotor Psychotherapy are both designed to reach the material that talking about it doesn't touch.</p>
+      <p>The resources here, the quiz, the workshop, the workbook, are built from this framework. They are not coping strategies. They are entry points into understanding: what's underneath your reaction, what your nervous system needs, and what becomes possible when you stop just managing and start actually looking.</p>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Start with two minutes.</h2>
-  <p>The free quiz takes two minutes and gives you a real starting point: which of five deeper feelings is underneath your misophonia, and a free guided mindfulness practice written specifically for your result.</p>
-  <a href="quiz.html" class="btn-painted btn-sage">
-    <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
-    <span class="btn-label">Take the Free Quiz</span>
-  </a>
-</section>
+<!-- ── WAVE ── -->
+<div style="width:100%;max-width:700px;margin:56px auto 0;padding:0 32px;">
+  <img src="images/Wave.png" alt="" aria-hidden="true" style="width:100%;display:block;mix-blend-mode:multiply;opacity:0.7;" loading="lazy" decoding="async">
+</div>
+<div style="height:48px;"></div>
 
 <footer>
   <div class="footer-links">
-    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Workshop</a>
-    <a href="quiz.html">Free Quiz</a>
+    <a href="quiz.html">Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>

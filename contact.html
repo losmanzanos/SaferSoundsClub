@@ -28,13 +28,13 @@
     }
     html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
+    :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 1; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
@@ -215,10 +215,9 @@
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="products.html">Workshop</a></li>
-    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
@@ -238,7 +237,7 @@
   <!-- FORM -->
   <div>
     <h2 class="form-title">Send a note.</h2>
-    <p class="form-sub">We read every message — usually within a few days</p>
+    <p class="form-sub">We read every message, usually within a few days</p>
 
     <form id="contactForm" novalidate>
       <div class="form-row">
@@ -262,19 +261,6 @@
         </select>
       </div>
 
-      <div class="form-row">
-        <label class="form-label" for="subject">What's this about?</label>
-        <select class="form-select" id="subject" name="subject">
-          <option value="">Select one</option>
-          <option value="workshop">The Misophonia Workshop</option>
-          <option value="workbook">The Relief Map Workbook</option>
-          <option value="therapist-training">Therapist training</option>
-          <option value="quiz">The free quiz</option>
-          <option value="general">General question</option>
-          <option value="press">Press / media</option>
-          <option value="other">Something else</option>
-        </select>
-      </div>
 
       <div class="form-row">
         <label class="form-label" for="message">Your message</label>
@@ -301,7 +287,7 @@
     <div class="sidebar-block">
       <span class="sidebar-label">For therapists</span>
       <p class="sidebar-heading">Interested in training?</p>
-      <p class="sidebar-body">Select "Therapist training" in the dropdown and let us know about your practice. We'll add you to the early-access list for the upcoming therapist curriculum.</p>
+      <p class="sidebar-body">Select "Therapist or clinician" in the form and let us know about your practice. We'll add you to the early-access list for the upcoming therapist curriculum.</p>
     </div>
 
     <div class="sidebar-block">
@@ -311,21 +297,21 @@
 
     <div class="sidebar-block">
       <span class="sidebar-label">Elsewhere</span>
-      <p class="sidebar-body">We share misophonia research, practice prompts, and community updates regularly. Find us where you spend time online — or start with the <a href="quiz.html" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">free quiz</a>.</p>
+      <p class="sidebar-body">We share misophonia research, practice prompts, and community updates regularly. Find us where you spend time online, or start with the <a href="quiz.html" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">free quiz</a>.</p>
     </div>
   </aside>
 </div>
 
-<div style="width:100%;height:240px;overflow:hidden;margin-top:48px;">
-  <img src="images/Wave.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:multiply;opacity:0.78;display:block;">
+<div style="width:100%;max-width:760px;margin:64px auto 0;padding:0 32px;">
+  <img src="images/Wave.png" alt="" aria-hidden="true" style="width:100%;display:block;mix-blend-mode:multiply;opacity:0.72;" loading="lazy" decoding="async">
 </div>
+<div style="height:40px;"></div>
 
 <footer>
   <div class="footer-links">
-    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Workshop</a>
-    <a href="quiz.html">Free Quiz</a>
+    <a href="quiz.html">Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>

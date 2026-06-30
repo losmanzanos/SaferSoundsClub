@@ -6,7 +6,7 @@
   <link rel="preload" href="fonts/MeowScript.ttf" as="font" type="font/truetype" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What's Underneath Your Misophonia? — Free Quiz</title>
+  <title>Walk Me Through a Family Dinner — The Safer Sounds Club</title>
   <meta name="description" content="Walk through a family dinner and find out what your nervous system has been trying to tell you. Free misophonia quiz from the Safer Sounds Club.">
   <meta name="keywords" content="misophonia quiz, misophonia test, what type of misophonia do I have, misophonia self-assessment, free misophonia resource">
   <meta property="og:title" content="What's Underneath Your Misophonia? — Free Quiz">
@@ -29,14 +29,14 @@
     }
     html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
+    :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.75; min-height: 100vh; }
 
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 1; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
@@ -164,6 +164,10 @@
       footer { padding: 24px 16px 40px; }
       .footer-links { gap: 12px; font-size: 0.9rem; }
     }
+    /* Quiz fullscreen: hide nav/footer while answering questions */
+    body.quiz-active nav,
+    body.quiz-active footer { display: none !important; }
+    body.quiz-active #quiz-app { padding-top: 32px; }
   </style>
 <script type="application/ld+json">
 {
@@ -192,10 +196,9 @@
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="products.html">Workshop</a></li>
-    <li><a href="quiz.html" class="active">Free Quiz</a></li>
+    <li><a href="quiz.html" class="active">Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -207,9 +210,8 @@
 
   <!-- INTRO -->
   <div class="step active" data-step="intro">
-    <p class="intro-eyebrow">Free Quiz</p>
-    <p class="intro-script-accent">Your nervous system has a pattern...</p>
     <h1 class="intro-title">Walk Me Through a Family Dinner and I'll Tell You Why One Crunch Keeps Wrecking Your Nervous System</h1>
+    <img src="images/dots-row.png" aria-hidden="true" alt="" style="display:block;width:100%;max-width:320px;margin:28px auto 32px;opacity:0.55;mix-blend-mode:multiply;" loading="lazy" decoding="async">
     <div class="intro-copy">
       <p>Let's start at the table. Dinner's ready. Maybe you feel yourself bracing a little bit already. Everyone sits down. Plates clink. Someone asks how your day was. For a minute, you're okay enough.</p>
       <p>Then someone takes the first bite.</p>
@@ -225,15 +227,16 @@
       <p>…you're in the right place.</p>
       <p>This isn't about whether the sounds are "real enough." They are. You don't have to convince me.</p>
       <p>Instead, we're going to look at something most people never think to ask: <em>Why does your body react this way in the first place?</em></p>
-      <p>By the end, you'll discover the protective pattern your nervous system is most likely falling into when the sounds start — and why it makes so much sense.</p>
+      <p>By the end, you'll discover the protective pattern your nervous system is most likely falling into when the sounds start, and why it makes so much sense.</p>
     </div>
     <p class="intro-cta-note">There's no right answer here. Don't overthink it. Just answer with the first thing your body says.</p>
-    <p class="intro-disclaimer">You're safe here. This is gentle reflection, not diagnosis or therapy. If something stirs, there's no rush — go at your own pace and stop any time.</p>
+    <p class="intro-disclaimer">You're safe here. This is gentle reflection, not diagnosis or therapy. If something stirs, there's no rush, go at your own pace and stop any time.</p>
     <div class="btn-start-wrap">
       <button class="btn-start" id="start-btn">
         <span class="paint-bg-start" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
         <span class="start-label">Pull up a chair</span>
       </button>
+      <img src="images/Chair.png" alt="" aria-hidden="true" style="width:clamp(80px,14vw,110px);mix-blend-mode:multiply;opacity:0.72;margin:40px auto 0;display:block;" loading="lazy" decoding="async">
     </div>
   </div>
 
@@ -253,7 +256,6 @@
         <span class="paint-bg"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
         <span class="label">See My Result →</span>
       </button>
-      <p class="privacy-note">No spam. Only what helps.</p>
     </form>
   </div>
 
@@ -289,7 +291,7 @@ const QUESTIONS = [
 <p>Your body reacts first. The way it always does.</p>`,
     stem: "The first thing through you is…",
     options: [
-      { text: "Everything sharpens — too loud, too close, too much.", type: "A" },
+      { text: "Everything sharpens , too loud, too close, too much.", type: "A" },
       { text: "Your stomach drops. Here it is again, and there's nothing I can do.", type: "B" },
       { text: "A charge floods your legs. Get up, get out, now.", type: "C" },
       { text: "Your jaw sets, your chest tightens. A no rises, but can't come out.", type: "D" },
@@ -324,10 +326,10 @@ const QUESTIONS = [
 <p>So the impulse goes nowhere. And instead…</p>`,
     stem: "What you actually do at the table is…",
     options: [
-      { text: "Try to turn the volume down — loops, earbuds, a focus point — anything to take the edge off.", type: "A" },
+      { text: "Try to turn the volume down , loops, earbuds, a focus point , anything to take the edge off.", type: "A" },
       { text: "Go still, brace, and wait for it to pass. There's nothing to do but get through it.", type: "B" },
-      { text: "Find a reason to get up — the bathroom, a refill — anything that gets me out for a minute.", type: "C" },
-      { text: "Say nothing. Swallow it. The thing I want to say — please stop — doesn't feel possible.", type: "D" },
+      { text: "Find a reason to get up , the bathroom, a refill , anything that gets me out for a minute.", type: "C" },
+      { text: "Say nothing. Swallow it. The thing I want to say , please stop , doesn't feel possible.", type: "D" },
       { text: "Keep my face calm and play along, so no one ever sees what it's costing me.", type: "E" },
     ]
   },
@@ -337,7 +339,7 @@ const QUESTIONS = [
     options: [
       { text: "There's a lot going on at once.", type: "A" },
       { text: "I have no control over what happens.", type: "B" },
-      { text: "I'm stuck and can't get out — the table, the car, the meeting.", type: "C" },
+      { text: "I'm stuck and can't get out , the table, the car, the meeting.", type: "C" },
       { text: "Someone's crossing into my space and I can't say so.", type: "D" },
       { text: "I'm with the people closest to me.", type: "E" },
     ]
@@ -354,7 +356,7 @@ const QUESTIONS = [
     ]
   },
   {
-    narrative: `<p>Now, picture you and the trigger person — and a version of this where you could say the truest thing and nothing would break. No fallout. None.</p>`,
+    narrative: `<p>Now, picture you and the trigger person, and a version of this where you could say the truest thing and nothing would break. No fallout. None.</p>`,
     stem: "If you could turn to them and say one true thing, it would be…",
     options: [
       { text: "Everything is so loud to me right now.", type: "A" },
@@ -370,7 +372,7 @@ const QUESTIONS = [
     options: [
       { text: "I'm not difficult. I just feel everything more.", type: "A" },
       { text: "This isn't a choice. It just happens to me.", type: "B" },
-      { text: "I'm not being rude — I'm trying not to panic.", type: "C" },
+      { text: "I'm not being rude , I'm trying not to panic.", type: "C" },
       { text: "I have needs too, and they are not too much.", type: "D" },
       { text: "How alone this has been.", type: "E" },
     ]
@@ -382,25 +384,25 @@ const RESULTS = {
     type: "Overwhelm",
     subtitle: "Your nervous system learned that it has to work harder to filter the world.",
     lede: "Turns out, it was never really the spoon. It was the feeling of too much coming in at once.",
-    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself — it was everything feeling like too much all at once: the voices, movement, chewing, clinking, background noise, even the pressure of trying to stay present while all of it is happening.</p>
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself , it was everything feeling like too much all at once: the voices, movement, chewing, clinking, background noise, even the pressure of trying to stay present while all of it is happening.</p>
 <p>Your answers kept pointing to a nervous system that takes in a lot. Not just sound, but everything. The room. The people. The micro-changes in tone or energy. It all gets in.</p>
-<p>That isn't a flaw. It's a kind of sensitivity — one that notices deeply, tracks closely, and stays attuned to what others miss. But without enough space to filter and come back down, that same sensitivity can tip into overwhelm.</p>
-<p>The sound is real. But the sound isn't the whole story. For your nervous system, by the time that bite happens, your system may already be full — already holding more input than it can comfortably organize. So when the spoon clinks, it isn't landing on a calm, spacious system. It's landing on one that is already at capacity. That's when the alarm makes sense.</p>
+<p>That isn't a flaw. It's a kind of sensitivity, one that notices deeply, tracks closely, and stays attuned to what others miss. But without enough space to filter and come back down, that same sensitivity can tip into overwhelm.</p>
+<p>The sound is real. But the sound isn't the whole story. For your nervous system, by the time that bite happens, your system may already be full, already holding more input than it can comfortably organize. So when the spoon clinks, it isn't landing on a calm, spacious system. It's landing on one that is already at capacity. That's when the alarm makes sense.</p>
 <p>This isn't about becoming less sensitive. It's about giving your sensitivity somewhere to land. Because sensitivity without support becomes overload. But sensitivity with space becomes clarity.</p>`,
     affirmation: "My sensitivity isn't too much. It's how deeply I notice, feel, and care.",
-    next: "The Safer Sounds Workshop helps your nervous system work with the overwhelm underneath the sounds — not by shutting down what you notice, but by giving your system more room so everything doesn't have to land at once."
+    next: "The Safer Sounds Workshop helps your nervous system work with the overwhelm underneath the sounds, not by shutting down what you notice, but by giving your system more room so everything doesn't have to land at once."
   },
   B: {
     type: "Helplessness",
     subtitle: "Your nervous system learned that sometimes nothing you do changes what's happening.",
     lede: "Turns out, it wasn't really the spoon. It was the feeling that there was nothing you could do about it.",
-    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself — it was what your body does after it starts. A shift shows up in your answers: not just irritation or overwhelm, but a sinking sense of <em>here we go again, I'm stuck again, no way out.</em></p>
-<p>The dinner table. The car. The meeting. The movie theater. Even lying in bed next to someone you love. What they share isn't just sound — it's the experience of something happening that you can't fully stop, control, or escape.</p>
-<p>That isn't random. Your nervous system is sensitive to moments where it predicts lack of control. At some point, it linked certain sensations with helplessness — not because you were powerless in every situation, but because there were moments where your body couldn't change what was happening safely or fast enough. Your system learned.</p>
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself , it was what your body does after it starts. A shift shows up in your answers: not just irritation or overwhelm, but a sinking sense of <em>here we go again, I'm stuck again, no way out.</em></p>
+<p>The dinner table. The car. The meeting. The movie theater. Even lying in bed next to someone you love. What they share isn't just sound, it's the experience of something happening that you can't fully stop, control, or escape.</p>
+<p>That isn't random. Your nervous system is sensitive to moments where it predicts lack of control. At some point, it linked certain sensations with helplessness, not because you were powerless in every situation, but because there were moments where your body couldn't change what was happening safely or fast enough. Your system learned.</p>
 <p>Now, when the first bite happens, it isn't just sound. It's a prediction: <em>this is happening and I can't stop it.</em> That prediction matters more than the sound itself. When your nervous system believes nothing will change, it stops trying to solve and starts preparing to endure.</p>
 <p>That doesn't mean you are powerless now. It means your nervous system is running an old model of what's possible.</p>`,
     affirmation: "I'm not always powerless. I can find something to do.",
-    next: "The Safer Sounds Workshop helps your nervous system work with the helplessness underneath the reaction — gently rebuilding a felt sense that you are not stuck in the same way you once were."
+    next: "The Safer Sounds Workshop helps your nervous system work with the helplessness underneath the reaction, gently rebuilding a felt sense that you are not stuck in the same way you once were."
   },
   C: {
     type: "Trapped",
@@ -408,8 +410,8 @@ const RESULTS = {
     lede: "Turns out, it was about more than just the crunch. It was the feeling that you couldn't leave.",
     body: `<p>When I walked through dinner with you, what stood out wasn't just how hard the chewing was. It was what happened around it. Your answers kept coming back to places where leaving didn't really feel like an option: the dinner table, the car, the meeting, lying in bed beside someone you love.</p>
 <p>Moments where your body wanted out, but getting up, speaking up, or walking away wasn't simple. That's not a coincidence.</p>
-<p>Your nervous system learned to connect certain sounds with the feeling of being trapped. Not because chewing itself is dangerous, but because there was once a feeling your body couldn't escape. When leaving doesn't feel possible, your body prepares the only way it knows how: it braces. The urge to flee has nowhere to go, so it becomes tight shoulders, a clenched jaw, shallow breathing — and quietly enduring until it's over.</p>
-<p>That's why "just ignore it" has never worked. Your reaction isn't the problem — it's a protective strategy your nervous system learned a long time ago. The hopeful part is that what was learned can also be relearned. Healing isn't about forcing yourself to tolerate chewing. It's about helping your body discover that it isn't as trapped as it once believed.</p>`,
+<p>Your nervous system learned to connect certain sounds with the feeling of being trapped. Not because chewing itself is dangerous, but because there was once a feeling your body couldn't escape. When leaving doesn't feel possible, your body prepares the only way it knows how: it braces. The urge to flee has nowhere to go, so it becomes tight shoulders, a clenched jaw, shallow breathing, and quietly enduring until it's over.</p>
+<p>That's why "just ignore it" has never worked. Your reaction isn't the problem, it's a protective strategy your nervous system learned a long time ago. The hopeful part is that what was learned can also be relearned. Healing isn't about forcing yourself to tolerate chewing. It's about helping your body discover that it isn't as trapped as it once believed.</p>`,
     affirmation: "My body learned to brace to keep me safe. It's allowed to soften with safe people now.",
     next: "The Safer Sounds Workshop helps you work with the trapped, no-exit feeling underneath the sound. Together we'll help your nervous system begin experiencing something it may have forgotten was possible: choice."
   },
@@ -418,24 +420,24 @@ const RESULTS = {
     subtitle: "Your nervous system learned that saying \"no\" wasn't always safe to express.",
     lede: "Turns out, it wasn't really the chewing you wanted to stop. It was everything you never got to say.",
     body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself. It was the moment your body tightened before anything even came out. A kind of internal stop. A protest that arrives, fully formed, and then has nowhere to go.</p>
-<p>Not just irritation. Not just overwhelm. Something sharper than that — a boundary rising up in your body: <em>that's too much, I need this to stop, I can't do this right now.</em> And then not being able to say it.</p>
+<p>Not just irritation. Not just overwhelm. Something sharper than that, a boundary rising up in your body: <em>that's too much, I need this to stop, I can't do this right now.</em> And then not being able to say it.</p>
 <p>At some point, your nervous system learned that the impulse to say no couldn't always be expressed safely. Maybe it wasn't welcomed. Maybe it was ignored. Maybe it created more rupture than relief. Your system adapted the way all nervous systems do: it learned to hold it in.</p>
-<p>So now, when someone takes that first bite, it isn't just sound. It's a familiar tightening — a boundary showing up again, only this time with nowhere to land. That's why the reaction can feel so big. It's a protest that never fully got to complete itself.</p>
+<p>So now, when someone takes that first bite, it isn't just sound. It's a familiar tightening, a boundary showing up again, only this time with nowhere to land. That's why the reaction can feel so big. It's a protest that never fully got to complete itself.</p>
 <p>And when a "no" can't move outward, it moves inward instead. It becomes pressure. Tension. Flood. Urgency. A body trying to contain something it was never meant to hold alone. Your needs are not too much. They never were.</p>`,
     affirmation: "My needs are not too much. They never were.",
-    next: "The Safer Sounds Workshop helps your nervous system gently meet the \"no\" underneath your reaction — not by forcing expression, but by helping your body learn that its boundaries can exist without everything falling apart."
+    next: "The Safer Sounds Workshop helps your nervous system gently meet the \"no\" underneath your reaction, not by forcing expression, but by helping your body learn that its boundaries can exist without everything falling apart."
   },
   E: {
     type: "Carrying It Alone",
     subtitle: "Your nervous system learned that this was something you had to manage by yourself.",
     lede: "Turns out, the hardest part wasn't dinner. It was believing you had to survive it alone.",
-    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself — it was what happened after. The way you stay composed while something inside you is clearly working very hard. The effort it takes to not react. To not show it. To keep the meal moving like nothing is wrong.</p>
-<p>The sound matters. It really does. But what makes it heavier is how alone you've had to be inside it. The dinner table. The car. The meeting. Even lying in bed next to someone you love. What they share isn't just sound — it's proximity to other people, with no clear way to explain what's happening in your body without feeling like you're too much, difficult, or misunderstood.</p>
-<p>So you learned to manage it quietly. To mask it. To leave the room if needed, or stay and endure it — but mostly to handle it without making it anyone else's problem. That adaptation makes sense. It probably helped you move through situations that didn't have room for your experience.</p>
-<p>But over time, it creates a second layer of pain: not just the sound, but the isolation inside it. When something is hard and no one else can see it, or when it feels like no one else really gets it, it starts to feel like it's yours to carry alone. And if you've ever wondered why this feels so heavy — that's part of it. Not just the trigger itself, but the loneliness wrapped around it.</p>
-<p>The good news is that this pattern isn't fixed. Nervous systems can learn something new — not just about sound, but about support.</p>`,
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself , it was what happened after. The way you stay composed while something inside you is clearly working very hard. The effort it takes to not react. To not show it. To keep the meal moving like nothing is wrong.</p>
+<p>The sound matters. It really does. But what makes it heavier is how alone you've had to be inside it. The dinner table. The car. The meeting. Even lying in bed next to someone you love. What they share isn't just sound, it's proximity to other people, with no clear way to explain what's happening in your body without feeling like you're too much, difficult, or misunderstood.</p>
+<p>So you learned to manage it quietly. To mask it. To leave the room if needed, or stay and endure it, but mostly to handle it without making it anyone else's problem. That adaptation makes sense. It probably helped you move through situations that didn't have room for your experience.</p>
+<p>But over time, it creates a second layer of pain: not just the sound, but the isolation inside it. When something is hard and no one else can see it, or when it feels like no one else really gets it, it starts to feel like it's yours to carry alone. And if you've ever wondered why this feels so heavy, that's part of it. Not just the trigger itself, but the loneliness wrapped around it.</p>
+<p>The good news is that this pattern isn't fixed. Nervous systems can learn something new, not just about sound, but about support.</p>`,
     affirmation: "I don't have to carry this alone. I can let others in.",
-    next: "The Safer Sounds Workshop helps your nervous system work with what's underneath the reaction — not just the sound, but the loneliness that often comes with it — so you don't have to hold it in isolation anymore."
+    next: "The Safer Sounds Workshop helps your nervous system work with what's underneath the reaction, not just the sound, but the loneliness that often comes with it, so you don't have to hold it in isolation anymore."
   }
 };
 
@@ -448,7 +450,7 @@ function showStep(name) {
   document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
   const el = document.querySelector(`[data-step="${name}"]`);
   if (el) el.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function computeResult() {
@@ -459,6 +461,7 @@ function computeResult() {
 
 // ── RENDER QUESTION ──────────────────────────────────────────────────
 function renderQuestion(index) {
+  window.scrollTo({ top: 0, behavior: 'instant' });
   const container = document.getElementById('questions-container');
   container.innerHTML = '';
 
@@ -518,6 +521,7 @@ function renderQuestion(index) {
 
 // ── SHOW RESULT ──────────────────────────────────────────────────────
 function showResult() {
+  document.body.classList.remove('quiz-active');
   const key = computeResult();
   const r = RESULTS[key];
   document.getElementById('result-type').textContent = r.type;
@@ -555,12 +559,14 @@ document.getElementById('email-form').addEventListener('submit', function(e) {
 // ── INIT ─────────────────────────────────────────────────────────────
 document.getElementById('start-btn').addEventListener('click', () => {
   document.querySelector('[data-step="intro"]').classList.remove('active');
+  document.body.classList.add('quiz-active');
   currentQ = 0;
   answers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
   renderQuestion(0);
 });
 
 document.getElementById('retake-btn').addEventListener('click', () => {
+  document.body.classList.add('quiz-active');
   currentQ = 0;
   answers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
   renderQuestion(0);
@@ -581,10 +587,9 @@ document.getElementById('retake-btn').addEventListener('click', () => {
 
 <footer>
   <div class="footer-links">
-    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Workshop</a>
-    <a href="quiz.html">Free Quiz</a>
+    <a href="quiz.html">Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>

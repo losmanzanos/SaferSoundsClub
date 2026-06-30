@@ -26,7 +26,7 @@
       "price": "17.00",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
-      "url": "https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop"
+      "url": "https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop?step=checkout"
     },
     "category": "Mental Health & Wellness",
     "audience": { "@type": "Audience", "audienceType": "People with misophonia" }
@@ -48,13 +48,13 @@
     @font-face { font-family: 'MeowScript'; src: url('../fonts/MeowScript.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: optional; }
     html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
+    :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 1; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
@@ -89,7 +89,7 @@
     .includes-label { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; margin-bottom: 20px; }
     .includes-list { list-style: none; padding: 0; }
     .includes-list li { font-size: 1rem; line-height: 1.8; margin-bottom: 18px; padding-left: 20px; position: relative; }
-    .includes-list li::before { content: '—'; position: absolute; left: 0; opacity: 0.4; }
+    .includes-list li::before { content: ','; position: absolute; left: 0; opacity: 0.4; }
     .includes-list strong { font-weight: 700; display: block; }
 
     /* for whom section */
@@ -98,7 +98,7 @@
     .for-whom h2 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 28px; }
     .for-whom ul { list-style: none; padding: 0; text-align: left; max-width: 580px; margin: 0 auto 36px; }
     .for-whom ul li { font-size: 1rem; line-height: 1.8; margin-bottom: 12px; padding-left: 20px; position: relative; }
-    .for-whom ul li::before { content: '—'; position: absolute; left: 0; opacity: 0.35; }
+    .for-whom ul li::before { content: ','; position: absolute; left: 0; opacity: 0.35; }
 
     /* about the creator */
     .about-strip { max-width: 800px; margin: 0 auto; padding: 64px 32px; }
@@ -170,10 +170,9 @@
 <nav>
   <a href="../index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
     <li><a href="../about.html">About</a></li>
     <li><a href="../products.html">Workshop</a></li>
-    <li><a href="../quiz.html">Free Quiz</a></li>
+    <li><a href="../quiz.html">Quiz</a></li>
     <li><a href="../faq.html">FAQ</a></li>
     <li><a href="../blog.html">Blog</a></li>
     <li><a href="../contact.html">Contact</a></li>
@@ -182,7 +181,6 @@
 </nav>
 
 <nav aria-label="breadcrumb" class="breadcrumb">
-  <a href="../index.html">Home</a>
   <span aria-hidden="true">/</span>
   <a href="../products.html">Workshop</a>
   <span aria-hidden="true">/</span>
@@ -194,7 +192,7 @@
 
   <!-- LEFT: image -->
   <div class="product-img-col">
-    <img src="../images/Stand.png" alt="The Safer Sounds Workshop — misophonia somatic experience" fetchpriority="high" decoding="async">
+    <img src="../images/Stand.png" alt="The Safer Sounds Workshop, misophonia somatic experience" fetchpriority="high" decoding="async">
   </div>
 
   <!-- RIGHT: details -->
@@ -204,17 +202,17 @@
     <p class="product-price-tag">$17 &nbsp;·&nbsp; Instant digital access</p>
 
     <div class="product-intro">
-      <p>A 60-minute self-guided somatic experience for anyone who has made their world smaller to manage their reaction to sounds — and is ready to start getting it back.</p>
+      <p>A 60-minute self-guided somatic experience for anyone who has made their world smaller to manage their reaction to sounds, and is ready to start getting it back.</p>
       <p>This isn't another coping strategy. It walks you through a real trigger moment from the inside: in your body, not just your mind. So you can finally understand what your nervous system has been trying to tell you all along.</p>
       <p>Work through it at your own pace, as many times as you need, with as many triggers as you'd like.</p>
     </div>
 
     <div class="cta-block">
-      <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" rel="noopener" class="btn-painted">
+      <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop?step=checkout" target="_blank" rel="noopener" class="btn-painted">
         <span class="paint-bg-img" aria-hidden="true">
           <img src="../images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
         </span>
-        <span class="btn-label">Get the Workshop — $17</span>
+        <span class="btn-label">Get the Workshop, $17</span>
       </a>
       <p class="cta-note">Instant access &nbsp;·&nbsp; Delivered via Kit &nbsp;·&nbsp; Yours to keep</p>
     </div>
@@ -225,7 +223,7 @@
     <ul class="includes-list">
       <li>
         <strong>A 60-minute guided somatic experience</strong>
-        Not a lecture — an experience. You'll slow down a real trigger moment and understand your reaction from the inside. Work through it with any trigger, as many times as you'd like.
+        Not a lecture, an experience. You'll slow down a real trigger moment and understand your reaction from the inside. Work through it with any trigger, as many times as you'd like.
       </li>
       <li>
         <strong>A guided mindfulness & somatic regulation practice</strong>
@@ -233,7 +231,7 @@
       </li>
       <li>
         <strong>The Misophonia Relief Map worksheet</strong>
-        Your own personal map of what's underneath your reaction — the sensations, emotions, beliefs, and unmet needs your nervous system has been reaching for all along. Bring it to your therapist or work through it on your own. Specific to your nervous system, your pattern, your history.
+        Your own personal map of what's underneath your reaction, the sensations, emotions, beliefs, and unmet needs your nervous system has been reaching for all along. Bring it to your therapist or work through it on your own. Specific to your nervous system, your pattern, your history.
       </li>
     </ul>
   </div>
@@ -250,7 +248,7 @@
       <li>You've eaten alone more times than you want to admit.</li>
       <li>You've left meals early, turned down trips, and made your world smaller to avoid triggering sounds.</li>
       <li>You know exactly who the gum chewers are in your life and you've never figured out how to talk to them about it.</li>
-      <li>You've been told you're too sensitive — often by the same people whose sounds bother you most.</li>
+      <li>You've been told you're too sensitive, often by the same people whose sounds bother you most.</li>
       <li>You've tried the coping strategies. They helped a little. You're still here.</li>
       <li>You want to sit at the dinner table. Sleep in your own bed. Say yes to things again.</li>
     </ul>
@@ -259,10 +257,9 @@
 
 <footer>
   <div class="footer-links">
-    <a href="../index.html">Home</a>
     <a href="../about.html">About</a>
     <a href="../products.html">Workshop</a>
-    <a href="../quiz.html">Free Quiz</a>
+    <a href="../quiz.html">Quiz</a>
     <a href="../faq.html">FAQ</a>
     <a href="../blog.html">Blog</a>
     <a href="../contact.html">Contact</a>
