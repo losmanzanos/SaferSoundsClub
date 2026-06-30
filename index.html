@@ -3,7 +3,7 @@
 <head>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preload" href="fonts/CoreBandiFace.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/MeowScript.ttf" as="font" type="font/truetype" crossorigin>
+  <link rel="preload" href="fonts/MeowScript.woff2" as="font" type="font/woff2" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Safer Sounds Club | Misophonia Help, Resources & Somatic Therapy</title>
@@ -23,8 +23,9 @@
     }
     @font-face {
       font-family: 'MeowScript';
-      src: url('fonts/MeowScript.ttf') format('truetype');
-      font-weight: normal; font-style: normal; font-display: optional;
+      src: url('fonts/MeowScript.woff2') format('woff2'),
+           url('fonts/MeowScript.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
