@@ -614,13 +614,12 @@
          visible on load (svh = stable small-viewport unit, no scroll jump) */
       .hero {
         min-height: calc(100vh - 264px);
-        min-height: calc(100svh - 264px);
+        min-height: calc(var(--ssc-vh, 100svh) - 264px);
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
       }
       /* labels flanking the chair, desktop-style */
-      .hero-chair-row { flex-direction: row; gap: 6px; align-items: center; justify-content: center; margin: 0 auto; padding: 0 12px; }
+      .hero-chair-row { flex-direction: row; gap: 6px; align-items: center; justify-content: center; margin: auto; padding: 0 12px; }
       .tagline-section { padding: 12px 24px 14px; }
       .tagline-script { margin-bottom: 18px; }
       .hero-chair-img { flex: 0 0 44%; width: 44%; max-width: 190px; margin: 0; display: block; }
@@ -701,6 +700,13 @@
     }
   ]
 }
+</script>
+<script>
+  (function () {
+    var set = function () { document.documentElement.style.setProperty('--ssc-vh', window.innerHeight + 'px'); };
+    set();
+    window.addEventListener('orientationchange', function () { setTimeout(set, 350); });
+  })();
 </script>
 </head>
 <body>
