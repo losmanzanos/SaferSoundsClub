@@ -97,7 +97,12 @@
     .modules-section { padding: 56px 32px; max-width: var(--max-w); margin: 0 auto; }
     .modules-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; opacity: 0.45; margin-bottom: 12px; }
     .modules-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 3.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
-    .module-card { background: transparent; border: 1.5px dashed rgba(26,26,26,0.35); border-radius: 2px; padding: 32px 40px; margin-bottom: 20px; }
+    .module-card { position: relative; background: transparent; padding: clamp(26px, 4vw, 40px) clamp(28px, 4.5vw, 48px); margin-bottom: 24px; }
+    .module-card::after { content: ''; position: absolute; inset: 0; background: url('images/frame-small.png') center / 100% 100% no-repeat; pointer-events: none; }
+    .module-card:nth-of-type(2) { transform: rotate(0.25deg); }
+    .module-card:nth-of-type(2)::after { background-image: url('images/frame-small-c.png'); }
+    .module-card:nth-of-type(3) { transform: rotate(-0.25deg); }
+    .module-card:nth-of-type(3)::after { background-image: url('images/frame-small-b.png'); }
     .module-num { font-family: 'CoreBandiFace', cursive; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.4; margin-bottom: 6px; }
     .module-title { font-family: 'CoreBandiFace', cursive; font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
     .module-body { font-size: 0.97rem; line-height: 1.65; }
