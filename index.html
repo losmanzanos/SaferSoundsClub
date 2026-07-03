@@ -610,14 +610,11 @@
       /* one-line title, fixed sizing — nothing depends on viewport height,
          so nothing resizes when the mobile browser toolbar collapses */
       .hero-title-mobile { font-size: clamp(1.9rem, 10.2vw, 2.6rem); margin: 8px 0 4px; }
-      .hero-chair-row { flex-direction: column; gap: 0; align-items: center; margin: 8px auto 0; }
-      /* chair first, both labels grouped tightly beneath it */
-      .hero-chair-img { order: 1; flex: none; width: min(56%, 210px); margin: 0 auto 10px; display: block; }
-      .hero-side { text-align: center; flex: none; width: 100%; max-width: 340px; }
-      .hero-side:first-child { order: 2; }
-      .hero-side:last-child { order: 3; }
-      .hero-side .caps-label br { display: none; }
-      .hero-side .caps-label { font-size: 0.9rem; letter-spacing: 0.08em !important; line-height: 2 !important; }
+      /* labels flanking the chair, desktop-style */
+      .hero-chair-row { flex-direction: row; gap: 6px; align-items: center; justify-content: center; margin: 10px auto 0; padding: 0 12px; }
+      .hero-chair-img { flex: 0 0 44%; width: 44%; max-width: 190px; margin: 0; display: block; }
+      .hero-side { text-align: center; flex: 1; min-width: 0; max-width: none; }
+      .hero-side .caps-label { font-size: 0.72rem; letter-spacing: 0.04em !important; line-height: 1.7 !important; }
       .tagline-section { padding: 18px 24px 10px; }
       .tagline-caps { font-size: 0.95rem; }
       .tagline-script { font-size: 1.9rem; margin-bottom: 14px; }
