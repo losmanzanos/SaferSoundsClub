@@ -613,15 +613,14 @@
       /* hero fills the first view so the dots divider is the last thing
          visible on load (svh = stable small-viewport unit, no scroll jump) */
       .hero {
-        min-height: calc(100vh - 240px);
-        min-height: calc(100svh - 240px);
+        min-height: calc(100vh - 264px);
+        min-height: calc(100svh - 264px);
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
       }
-      .hero-title-mobile { margin-top: auto; }
       /* labels flanking the chair, desktop-style */
-      .hero-chair-row { flex-direction: row; gap: 6px; align-items: center; justify-content: center; margin: auto auto 0; padding: 0 12px; }
+      .hero-chair-row { flex-direction: row; gap: 6px; align-items: center; justify-content: center; margin: 0 auto; padding: 0 12px; }
       .tagline-section { padding: 12px 24px 14px; }
       .tagline-script { margin-bottom: 18px; }
       .hero-chair-img { flex: 0 0 44%; width: 44%; max-width: 190px; margin: 0; display: block; }
